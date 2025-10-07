@@ -46,6 +46,24 @@ document.addEventListener('keydown', e => {
 document.getElementById('btnClear').addEventListener('click', () => {
   render('<span class="text-secondary">Output cleared.</span>')
   clickCount = 0
+  hoverCount = 0
+})
+
+//hover card option A
+
+let hoverCount = 0
+
+dblCard.addEventListener("mouseenter", () => {
+  dblCard.classList.add("hover-highlight")
+  hoverCount++;
+  render(
+    `<p>You hovered over the card <strong>${hoverCount}</strong> time${ hoverCount === 1 ? '' : 's'}.</p>`
+  )
+})
+
+dblCard.addEventListener("mouseleave", () => {
+  dblCard.classList.remove("hover-highlight")
+  render("<p>You are not hovering anymore</p>")
 })
 
 /* =================================================
